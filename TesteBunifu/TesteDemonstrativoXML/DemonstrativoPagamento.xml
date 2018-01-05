@@ -1,0 +1,123 @@
+<ansTISS:mensagemTISS xmlns:ansTISS="http://www.ans.gov.br/padroes/tiss/schemas">
+<ansTISS:cabecalho>
+	<ansTISS:identificacaoTransacao>
+	<ansTISS:tipoTransacao>DEMONSTRATIVO_PAGAMENTO</ansTISS:tipoTransacao>
+	<ansTISS:sequencialTransacao>1</ansTISS:sequencialTransacao>
+	<ansTISS:dataRegistroTransacao>2018-01-04</ansTISS:dataRegistroTransacao>
+	<ansTISS:horaRegistroTransacao>13:04:11.287-02:00</ansTISS:horaRegistroTransacao>
+	</ansTISS:identificacaoTransacao>
+	<ansTISS:origem>
+		<ansTISS:registroANS>006246</ansTISS:registroANS>
+	</ansTISS:origem>
+	<ansTISS:destino>
+		<ansTISS:codigoPrestadorNaOperadora>
+		<ansTISS:codigoPrestadorNaOperadora>526370060001</ansTISS:codigoPrestadorNaOperadora>
+		</ansTISS:codigoPrestadorNaOperadora>
+	</ansTISS:destino>
+	<ansTISS:versaoPadrao>2.02.03</ansTISS:versaoPadrao>
+	<ansTISS:identificacaoSoftwareGerador>
+		<ansTISS:nomeAplicativo>Saude On Line</ansTISS:nomeAplicativo>
+		<ansTISS:versaoAplicativo>1.0</ansTISS:versaoAplicativo>
+		<ansTISS:fabricanteAplicativo>SulAmerica</ansTISS:fabricanteAplicativo>
+	</ansTISS:identificacaoSoftwareGerador>
+</ansTISS:cabecalho>
+<ansTISS:operadoraParaPrestador>
+	<ansTISS:demonstrativosRetorno>
+		<ansTISS:demonstrativoPagamento>
+				<ansTISS:cabecalhoDemonstrativo>
+					<ansTISS:numeroDemonstrativo>1</ansTISS:numeroDemonstrativo>
+					<ansTISS:dataEmissao>2018-01-04</ansTISS:dataEmissao>
+				</ansTISS:cabecalhoDemonstrativo>
+				<ansTISS:identificacaoFontePagadora>
+					<ansTISS:operadoraRegulada>
+						<ansTISS:registroANS>006246</ansTISS:registroANS>
+						<ansTISS:CNPJ>01685053000156</ansTISS:CNPJ>
+						<ansTISS:nomeOperadora>SUL AMÃ?RICA COMPANHIA DE SEGURO SAÃsDE</ansTISS:nomeOperadora>
+					</ansTISS:operadoraRegulada>
+				</ansTISS:identificacaoFontePagadora>
+				<ansTISS:dadosPrestador>
+					<ansTISS:identificacao>
+						<ansTISS:codigoPrestadorNaOperadora>526370060001</ansTISS:codigoPrestadorNaOperadora>
+					</ansTISS:identificacao>
+					<ansTISS:nomeContratado>OTORHINUS CLIN MEDICA SC LTDA</ansTISS:nomeContratado>
+				</ansTISS:dadosPrestador>
+				<ansTISS:dadosPagamento>
+					<ansTISS:dataPagamento>2017-12-04</ansTISS:dataPagamento>
+					<ansTISS:formaPagamento>1</ansTISS:formaPagamento>
+					<ansTISS:banco>33</ansTISS:banco>
+					<ansTISS:agencia>2174</ansTISS:agencia>
+					<ansTISS:contaCorrente>13000622</ansTISS:contaCorrente>
+				</ansTISS:dadosPagamento>
+				<ansTISS:dadosResumo>
+					<ansTISS:detalheResumo>
+					<ansTISS:numeroFatura></ansTISS:numeroFatura>
+					<ansTISS:numeroLote>6390006900</ansTISS:numeroLote>
+					<ansTISS:dataEnvioLote>2017-10-13</ansTISS:dataEnvioLote>
+					<ansTISS:numeroProtocolo>6390006900</ansTISS:numeroProtocolo>
+					<ansTISS:valorInformado>9596.50</ansTISS:valorInformado>
+					<ansTISS:valorProcessado>9596.50</ansTISS:valorProcessado>
+					<ansTISS:valorLiberado>8811.76</ansTISS:valorLiberado>
+					<ansTISS:valorGlosa>784.74</ansTISS:valorGlosa>
+					</ansTISS:detalheResumo>
+				<ansTISS:detalheResumo>
+					<ansTISS:numeroFatura></ansTISS:numeroFatura>
+					<ansTISS:numeroLote>6390006901</ansTISS:numeroLote>
+					<ansTISS:dataEnvioLote>2017-10-19</ansTISS:dataEnvioLote>
+					<ansTISS:numeroProtocolo>6390006901</ansTISS:numeroProtocolo>
+					<ansTISS:valorInformado>443.73</ansTISS:valorInformado>
+					<ansTISS:valorProcessado>443.73</ansTISS:valorProcessado>
+					<ansTISS:valorLiberado>443.73</ansTISS:valorLiberado>
+					<ansTISS:valorGlosa>0.00</ansTISS:valorGlosa>
+				</ansTISS:detalheResumo>
+				<ansTISS:detalheResumo>
+					<ansTISS:numeroFatura></ansTISS:numeroFatura>
+					<ansTISS:numeroLote>6390006902</ansTISS:numeroLote>
+					<ansTISS:dataEnvioLote>2017-10-20</ansTISS:dataEnvioLote>
+					<ansTISS:numeroProtocolo>6390006902</ansTISS:numeroProtocolo>
+					<ansTISS:valorInformado>3401.44</ansTISS:valorInformado>
+					<ansTISS:valorProcessado>3401.44</ansTISS:valorProcessado>
+					<ansTISS:valorLiberado>3396.24</ansTISS:valorLiberado>
+					<ansTISS:valorGlosa>5.20</ansTISS:valorGlosa>
+				</ansTISS:detalheResumo>
+				<ansTISS:detalheResumo>
+					<ansTISS:numeroFatura>0000000000</ansTISS:numeroFatura>
+					<ansTISS:numeroLote>6390006903</ansTISS:numeroLote>
+					<ansTISS:dataEnvioLote>2017-10-20</ansTISS:dataEnvioLote>
+					<ansTISS:numeroProtocolo>6390006903</ansTISS:numeroProtocolo>
+					<ansTISS:valorInformado>5670.00</ansTISS:valorInformado>
+					<ansTISS:valorProcessado>5670.00</ansTISS:valorProcessado>
+					<ansTISS:valorLiberado>5490.00</ansTISS:valorLiberado>
+					<ansTISS:valorGlosa>180.00</ansTISS:valorGlosa>
+				</ansTISS:detalheResumo>
+				<ansTISS:totalGeralInformado>19111.67</ansTISS:totalGeralInformado>
+				<ansTISS:TotalGeralProcessado>19111.67</ansTISS:TotalGeralProcessado>
+				<ansTISS:TotalGeralGlosa>969.94</ansTISS:TotalGeralGlosa>
+				<ansTISS:TotalGeralLiberado>18141.73</ansTISS:TotalGeralLiberado>
+			</ansTISS:dadosResumo>
+				<ansTISS:valorTotal>18141.73</ansTISS:valorTotal>
+				<ansTISS:demaisDescontos>
+					<ansTISS:itemDesconto>
+						<ansTISS:valorDesconto>0</ansTISS:valorDesconto>
+						<ansTISS:descricao>Valor IR</ansTISS:descricao>
+					</ansTISS:itemDesconto>
+					<ansTISS:itemDesconto>
+						<ansTISS:valorDesconto>0</ansTISS:valorDesconto>
+						<ansTISS:descricao>Valor PIS</ansTISS:descricao>
+					</ansTISS:itemDesconto>
+					<ansTISS:itemDesconto>
+						<ansTISS:valorDesconto>0</ansTISS:valorDesconto>
+						<ansTISS:descricao>Valor COFINS</ansTISS:descricao>
+					</ansTISS:itemDesconto>
+					<ansTISS:itemDesconto>
+						<ansTISS:valorDesconto>0</ansTISS:valorDesconto>
+						<ansTISS:descricao>Valor CSLL</ansTISS:descricao>
+					</ansTISS:itemDesconto>
+				</ansTISS:demaisDescontos>
+			<ansTISS:valorFinalLiberado>18141.73</ansTISS:valorFinalLiberado>
+		</ansTISS:demonstrativoPagamento>
+	</ansTISS:demonstrativosRetorno>
+</ansTISS:operadoraParaPrestador>
+<ansTISS:epilogo>
+	<ansTISS:hash>396638ec224c321502d7db1efd49914c</ansTISS:hash>
+</ansTISS:epilogo>
+</ansTISS:mensagemTISS>

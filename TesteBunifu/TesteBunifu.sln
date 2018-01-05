@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{55B24D88-8076-463E-8FA0-45FA888599DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursoGlosa", "RecursoGlosa\RecursoGlosa.csproj", "{5AB106DD-A55C-496A-834D-8F7265B84FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDemonstrativoXML", "TesteDemonstrativoXML\TesteDemonstrativoXML.csproj", "{436F1BE5-D7AF-4EDB-9A00-011FF808B8B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55B24D88-8076-463E-8FA0-45FA888599DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B24D88-8076-463E-8FA0-45FA888599DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B24D88-8076-463E-8FA0-45FA888599DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B24D88-8076-463E-8FA0-45FA888599DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB106DD-A55C-496A-834D-8F7265B84FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB106DD-A55C-496A-834D-8F7265B84FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB106DD-A55C-496A-834D-8F7265B84FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB106DD-A55C-496A-834D-8F7265B84FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436F1BE5-D7AF-4EDB-9A00-011FF808B8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436F1BE5-D7AF-4EDB-9A00-011FF808B8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436F1BE5-D7AF-4EDB-9A00-011FF808B8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436F1BE5-D7AF-4EDB-9A00-011FF808B8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

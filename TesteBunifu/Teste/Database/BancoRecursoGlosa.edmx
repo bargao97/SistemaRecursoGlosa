@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RECURSO_GLOSA_MDATAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DEMONSTRATIVO">
+          <Key>
+            <PropertyRef Name="ID_DEMONS" />
+          </Key>
+          <Property Name="ID_DEMONS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" Type="int" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" Type="int" Nullable="false" />
+          <Property Name="FUNCIONARIO_ID_FUNCIONARIO" Type="int" Nullable="false" />
+          <Property Name="DT_BAIXADO" Type="date" />
+          <Property Name="TIP_DEMONS" Type="int" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="ID_FUNCIONARIO" />
+          </Key>
+          <Property Name="ID_FUNCIONARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="255" />
+          <Property Name="SENHA" Type="varchar" MaxLength="255" />
+          <Property Name="NOME_FUNCIONARIO" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="GUIAS">
+          <Key>
+            <PropertyRef Name="ID_GUIA" />
+          </Key>
+          <Property Name="ID_GUIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOTE_COD_LOTE" Type="int" />
+          <Property Name="COD_GUIA" Type="int" />
+          <Property Name="PROTOCOLO" Type="int" />
+          <Property Name="NUM_GUIA" Type="int" />
+          <Property Name="NUM_GUIA_PRESTADOR" Type="int" />
+          <Property Name="SENHA" Type="int" />
+        </EntityType>
+        <EntityType Name="LOTE">
+          <Key>
+            <PropertyRef Name="COD_LOTE" />
+          </Key>
+          <Property Name="COD_LOTE" Type="int" Nullable="false" />
+          <Property Name="ID_LOTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPERADORAS">
+          <Key>
+            <PropertyRef Name="ID_OPERADORA" />
+          </Key>
+          <Property Name="ID_OPERADORA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_FANTASIA" Type="varchar" MaxLength="255" />
+          <Property Name="REGISTRO_ANS" Type="int" />
+        </EntityType>
+        <EntityType Name="PRESTADORES">
+          <Key>
+            <PropertyRef Name="IDPRESTADOR" />
+          </Key>
+          <Property Name="IDPRESTADOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RAZAO_SOCIAL" Type="varchar" MaxLength="255" />
+          <Property Name="CPF_CNPJ" Type="varchar" MaxLength="255" />
+          <Property Name="NOME_FANTASIA" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PRESTADORES_has_OPERADORAS">
+          <Key>
+            <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+            <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+          </Key>
+          <Property Name="PRESTADORES_IDPRESTADOR" Type="int" Nullable="false" />
+          <Property Name="OPERADORAS_ID_OPERADORA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROCEDIMENTO">
+          <Key>
+            <PropertyRef Name="idPROCEDIMENTO" />
+          </Key>
+          <Property Name="idPROCEDIMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUIAS_ID_GUIA" Type="int" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="255" />
+          <Property Name="VLR_INFORMADO" Type="int" />
+          <Property Name="VLR_LIBERADO" Type="int" />
+          <Property Name="VLR_GLOSA" Type="int" />
+          <Property Name="DATA_REALIZACAO" Type="date" />
+          <Property Name="COD_GLOSA" Type="int" />
+          <Property Name="TABELA" Type="int" />
+          <Property Name="COD_GLOSA_GUIA" Type="int" />
+        </EntityType>
+        <EntityType Name="RECURSO_GLOSA">
+          <Key>
+            <PropertyRef Name="idRECURSO_GLOSA" />
+          </Key>
+          <Property Name="idRECURSO_GLOSA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TABELA_ANS_COD_ANS" Type="int" />
+          <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="int" />
+          <Property Name="PROCEDIMENTO_idPROCEDIMENTO" Type="int" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" Type="int" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" Type="int" Nullable="false" />
+          <Property Name="FUNCIONARIO_ID_FUNCIONARIO" Type="int" Nullable="false" />
+          <Property Name="OBSERVACAO" Type="varchar" MaxLength="255" />
+          <Property Name="STATUS_2" Type="int" />
+          <Property Name="VLR_RECURSADO" Type="float" />
+          <Property Name="DT_RECURSO" Type="date" />
+          <Property Name="DPP" Type="date" />
+        </EntityType>
+        <EntityType Name="TABELA_ANS">
+          <Key>
+            <PropertyRef Name="COD_ANS" />
+          </Key>
+          <Property Name="COD_ANS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="int" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="255" />
+          <Property Name="RESPOSTA_AUTOMATICA" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TABELA_OPCOES_ANS">
+          <Key>
+            <PropertyRef Name="ID_OPCOES" />
+          </Key>
+          <Property Name="ID_OPCOES" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OPERADORAS_ID_OPERADORA" Type="int" />
+          <Property Name="DESCRIÇÃO" Type="varchar" MaxLength="255" />
+          <Property Name="COD_INTERNO" Type="int" />
+          <Property Name="RESPOSTA_AUTOMATICA" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__DEMONSTRA__FUNCI__276EDEB3">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="DEMONSTRATIVO" Type="Self.DEMONSTRATIVO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="DEMONSTRATIVO">
+              <PropertyRef Name="FUNCIONARIO_ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DEMONSTRATIVO__286302EC">
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="1" />
+          <End Role="DEMONSTRATIVO" Type="Self.DEMONSTRATIVO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="DEMONSTRATIVO">
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GUIAS__LOTE_COD___182C9B23">
+          <End Role="LOTE" Type="Self.LOTE" Multiplicity="0..1" />
+          <End Role="GUIAS" Type="Self.GUIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOTE">
+              <PropertyRef Name="COD_LOTE" />
+            </Principal>
+            <Dependent Role="GUIAS">
+              <PropertyRef Name="LOTE_COD_LOTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRESTADOR__OPERA__1ED998B2">
+          <End Role="OPERADORAS" Type="Self.OPERADORAS" Multiplicity="1" />
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPERADORAS">
+              <PropertyRef Name="ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRESTADOR__PREST__1DE57479">
+          <End Role="PRESTADORES" Type="Self.PRESTADORES" Multiplicity="1" />
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES">
+              <PropertyRef Name="IDPRESTADOR" />
+            </Principal>
+            <Dependent Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PROCEDIME__GUIAS__24927208">
+          <End Role="GUIAS" Type="Self.GUIAS" Multiplicity="0..1" />
+          <End Role="PROCEDIMENTO" Type="Self.PROCEDIMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GUIAS">
+              <PropertyRef Name="ID_GUIA" />
+            </Principal>
+            <Dependent Role="PROCEDIMENTO">
+              <PropertyRef Name="GUIAS_ID_GUIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__FUNCI__2B3F6F97">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="FUNCIONARIO_ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__PROCE__2D27B809">
+          <End Role="PROCEDIMENTO" Type="Self.PROCEDIMENTO" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROCEDIMENTO">
+              <PropertyRef Name="idPROCEDIMENTO" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="PROCEDIMENTO_idPROCEDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__TABEL__2E1BDC42">
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="0..1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="ID_OPCOES" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="TABELA_OPCOES_ANS_ID_OPCOES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__TABEL__2F10007B">
+          <End Role="TABELA_ANS" Type="Self.TABELA_ANS" Multiplicity="0..1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_ANS">
+              <PropertyRef Name="COD_ANS" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="TABELA_ANS_COD_ANS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_GLOSA__2C3393D0">
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TABELA_AN__TABEL__21B6055D">
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="0..1" />
+          <End Role="TABELA_ANS" Type="Self.TABELA_ANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="ID_OPCOES" />
+            </Principal>
+            <Dependent Role="TABELA_ANS">
+              <PropertyRef Name="TABELA_OPCOES_ANS_ID_OPCOES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TABELA_OP__OPERA__1B0907CE">
+          <End Role="OPERADORAS" Type="Self.OPERADORAS" Multiplicity="0..1" />
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPERADORAS">
+              <PropertyRef Name="ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RECURSO_GLOSA_MDATAModelStoreContainer">
+          <EntitySet Name="DEMONSTRATIVO" EntityType="Self.DEMONSTRATIVO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FUNCIONARIO" EntityType="Self.FUNCIONARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GUIAS" EntityType="Self.GUIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOTE" EntityType="Self.LOTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPERADORAS" EntityType="Self.OPERADORAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRESTADORES" EntityType="Self.PRESTADORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRESTADORES_has_OPERADORAS" EntityType="Self.PRESTADORES_has_OPERADORAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROCEDIMENTO" EntityType="Self.PROCEDIMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECURSO_GLOSA" EntityType="Self.RECURSO_GLOSA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABELA_ANS" EntityType="Self.TABELA_ANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABELA_OPCOES_ANS" EntityType="Self.TABELA_OPCOES_ANS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DEMONSTRA__FUNCI__276EDEB3" Association="Self.FK__DEMONSTRA__FUNCI__276EDEB3">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="DEMONSTRATIVO" EntitySet="DEMONSTRATIVO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DEMONSTRATIVO__286302EC" Association="Self.FK__DEMONSTRATIVO__286302EC">
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+            <End Role="DEMONSTRATIVO" EntitySet="DEMONSTRATIVO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GUIAS__LOTE_COD___182C9B23" Association="Self.FK__GUIAS__LOTE_COD___182C9B23">
+            <End Role="LOTE" EntitySet="LOTE" />
+            <End Role="GUIAS" EntitySet="GUIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRESTADOR__OPERA__1ED998B2" Association="Self.FK__PRESTADOR__OPERA__1ED998B2">
+            <End Role="OPERADORAS" EntitySet="OPERADORAS" />
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRESTADOR__PREST__1DE57479" Association="Self.FK__PRESTADOR__PREST__1DE57479">
+            <End Role="PRESTADORES" EntitySet="PRESTADORES" />
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PROCEDIME__GUIAS__24927208" Association="Self.FK__PROCEDIME__GUIAS__24927208">
+            <End Role="GUIAS" EntitySet="GUIAS" />
+            <End Role="PROCEDIMENTO" EntitySet="PROCEDIMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__FUNCI__2B3F6F97" Association="Self.FK__RECURSO_G__FUNCI__2B3F6F97">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__PROCE__2D27B809" Association="Self.FK__RECURSO_G__PROCE__2D27B809">
+            <End Role="PROCEDIMENTO" EntitySet="PROCEDIMENTO" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__TABEL__2E1BDC42" Association="Self.FK__RECURSO_G__TABEL__2E1BDC42">
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__TABEL__2F10007B" Association="Self.FK__RECURSO_G__TABEL__2F10007B">
+            <End Role="TABELA_ANS" EntitySet="TABELA_ANS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_GLOSA__2C3393D0" Association="Self.FK__RECURSO_GLOSA__2C3393D0">
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TABELA_AN__TABEL__21B6055D" Association="Self.FK__TABELA_AN__TABEL__21B6055D">
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+            <End Role="TABELA_ANS" EntitySet="TABELA_ANS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TABELA_OP__OPERA__1B0907CE" Association="Self.FK__TABELA_OP__OPERA__1B0907CE">
+            <End Role="OPERADORAS" EntitySet="OPERADORAS" />
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RECURSO_GLOSA_MDATAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DEMONSTRATIVO">
+          <Key>
+            <PropertyRef Name="ID_DEMONS" />
+          </Key>
+          <Property Name="ID_DEMONS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" Type="Int32" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" Type="Int32" Nullable="false" />
+          <Property Name="FUNCIONARIO_ID_FUNCIONARIO" Type="Int32" Nullable="false" />
+          <Property Name="DT_BAIXADO" Type="DateTime" Precision="0" />
+          <Property Name="TIP_DEMONS" Type="Int32" />
+          <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK__DEMONSTRA__FUNCI__276EDEB3" FromRole="DEMONSTRATIVO" ToRole="FUNCIONARIO" />
+          <NavigationProperty Name="PRESTADORES_has_OPERADORAS" Relationship="Self.FK__DEMONSTRATIVO__286302EC" FromRole="DEMONSTRATIVO" ToRole="PRESTADORES_has_OPERADORAS" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="ID_FUNCIONARIO" />
+          </Key>
+          <Property Name="ID_FUNCIONARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USUARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SENHA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_FUNCIONARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DEMONSTRATIVO" Relationship="Self.FK__DEMONSTRA__FUNCI__276EDEB3" FromRole="FUNCIONARIO" ToRole="DEMONSTRATIVO" />
+          <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_G__FUNCI__2B3F6F97" FromRole="FUNCIONARIO" ToRole="RECURSO_GLOSA" />
+        </EntityType>
+        <EntityType Name="GUIAS">
+          <Key>
+            <PropertyRef Name="ID_GUIA" />
+          </Key>
+          <Property Name="ID_GUIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOTE_COD_LOTE" Type="Int32" />
+          <Property Name="COD_GUIA" Type="Int32" />
+          <Property Name="PROTOCOLO" Type="Int32" />
+          <Property Name="NUM_GUIA" Type="Int32" />
+          <Property Name="NUM_GUIA_PRESTADOR" Type="Int32" />
+          <Property Name="SENHA" Type="Int32" />
+          <NavigationProperty Name="LOTE" Relationship="Self.FK__GUIAS__LOTE_COD___182C9B23" FromRole="GUIAS" ToRole="LOTE" />
+          <NavigationProperty Name="PROCEDIMENTO" Relationship="Self.FK__PROCEDIME__GUIAS__24927208" FromRole="GUIAS" ToRole="PROCEDIMENTO" />
+        </EntityType>
+        <EntityType Name="LOTE">
+          <Key>
+            <PropertyRef Name="COD_LOTE" />
+          </Key>
+          <Property Name="COD_LOTE" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="GUIAS" Relationship="Self.FK__GUIAS__LOTE_COD___182C9B23" FromRole="LOTE" ToRole="GUIAS" />
+        </EntityType>
+        <EntityType Name="OPERADORAS">
+          <Key>
+            <PropertyRef Name="ID_OPERADORA" />
+          </Key>
+          <Property Name="ID_OPERADORA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_FANTASIA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="REGISTRO_ANS" Type="Int32" />
+          <NavigationProperty Name="PRESTADORES_has_OPERADORAS" Relationship="Self.FK__PRESTADOR__OPERA__1ED998B2" FromRole="OPERADORAS" ToRole="PRESTADORES_has_OPERADORAS" />
+          <NavigationProperty Name="TABELA_OPCOES_ANS" Relationship="Self.FK__TABELA_OP__OPERA__1B0907CE" FromRole="OPERADORAS" ToRole="TABELA_OPCOES_ANS" />
+        </EntityType>
+        <EntityType Name="PRESTADORES">
+          <Key>
+            <PropertyRef Name="IDPRESTADOR" />
+          </Key>
+          <Property Name="IDPRESTADOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RAZAO_SOCIAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CPF_CNPJ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_FANTASIA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRESTADORES_has_OPERADORAS" Relationship="Self.FK__PRESTADOR__PREST__1DE57479" FromRole="PRESTADORES" ToRole="PRESTADORES_has_OPERADORAS" />
+        </EntityType>
+        <EntityType Name="PRESTADORES_has_OPERADORAS">
+          <Key>
+            <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+            <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+          </Key>
+          <Property Name="PRESTADORES_IDPRESTADOR" Type="Int32" Nullable="false" />
+          <Property Name="OPERADORAS_ID_OPERADORA" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DEMONSTRATIVO" Relationship="Self.FK__DEMONSTRATIVO__286302EC" FromRole="PRESTADORES_has_OPERADORAS" ToRole="DEMONSTRATIVO" />
+          <NavigationProperty Name="OPERADORAS" Relationship="Self.FK__PRESTADOR__OPERA__1ED998B2" FromRole="PRESTADORES_has_OPERADORAS" ToRole="OPERADORAS" />
+          <NavigationProperty Name="PRESTADORES" Relationship="Self.FK__PRESTADOR__PREST__1DE57479" FromRole="PRESTADORES_has_OPERADORAS" ToRole="PRESTADORES" />
+          <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_GLOSA__2C3393D0" FromRole="PRESTADORES_has_OPERADORAS" ToRole="RECURSO_GLOSA" />
+        </EntityType>
+        <EntityType Name="PROCEDIMENTO">
+          <Key>
+            <PropertyRef Name="idPROCEDIMENTO" />
+          </Key>
+          <Property Name="idPROCEDIMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUIAS_ID_GUIA" Type="Int32" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VLR_INFORMADO" Type="Int32" />
+          <Property Name="VLR_LIBERADO" Type="Int32" />
+          <Property Name="VLR_GLOSA" Type="Int32" />
+          <Property Name="DATA_REALIZACAO" Type="DateTime" Precision="0" />
+          <Property Name="COD_GLOSA" Type="Int32" />
+          <Property Name="TABELA" Type="Int32" />
+          <Property Name="COD_GLOSA_GUIA" Type="Int32" />
+          <NavigationProperty Name="GUIAS" Relationship="Self.FK__PROCEDIME__GUIAS__24927208" FromRole="PROCEDIMENTO" ToRole="GUIAS" />
+          <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_G__PROCE__2D27B809" FromRole="PROCEDIMENTO" ToRole="RECURSO_GLOSA" />
+        </EntityType>
+        <EntityType Name="RECURSO_GLOSA">
+          <Key>
+            <PropertyRef Name="idRECURSO_GLOSA" />
+          </Key>
+          <Property Name="idRECURSO_GLOSA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TABELA_ANS_COD_ANS" Type="Int32" />
+          <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="Int32" />
+          <Property Name="PROCEDIMENTO_idPROCEDIMENTO" Type="Int32" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" Type="Int32" Nullable="false" />
+          <Property Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" Type="Int32" Nullable="false" />
+          <Property Name="FUNCIONARIO_ID_FUNCIONARIO" Type="Int32" Nullable="false" />
+          <Property Name="OBSERVACAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS_2" Type="Int32" />
+          <Property Name="VLR_RECURSADO" Type="Double" />
+          <Property Name="DT_RECURSO" Type="DateTime" Precision="0" />
+          <Property Name="DPP" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK__RECURSO_G__FUNCI__2B3F6F97" FromRole="RECURSO_GLOSA" ToRole="FUNCIONARIO" />
+          <NavigationProperty Name="PRESTADORES_has_OPERADORAS" Relationship="Self.FK__RECURSO_GLOSA__2C3393D0" FromRole="RECURSO_GLOSA" ToRole="PRESTADORES_has_OPERADORAS" />
+          <NavigationProperty Name="PROCEDIMENTO" Relationship="Self.FK__RECURSO_G__PROCE__2D27B809" FromRole="RECURSO_GLOSA" ToRole="PROCEDIMENTO" />
+          <NavigationProperty Name="TABELA_OPCOES_ANS" Relationship="Self.FK__RECURSO_G__TABEL__2E1BDC42" FromRole="RECURSO_GLOSA" ToRole="TABELA_OPCOES_ANS" />
+          <NavigationProperty Name="TABELA_ANS" Relationship="Self.FK__RECURSO_G__TABEL__2F10007B" FromRole="RECURSO_GLOSA" ToRole="TABELA_ANS" />
+        </EntityType>
+        <EntityType Name="TABELA_ANS">
+          <Key>
+            <PropertyRef Name="COD_ANS" />
+          </Key>
+          <Property Name="COD_ANS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="Int32" />
+          <Property Name="DESCRICAO" Type="String" />
+          <Property Name="RESPOSTA_AUTOMATICA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_G__TABEL__2F10007B" FromRole="TABELA_ANS" ToRole="RECURSO_GLOSA" />
+          <NavigationProperty Name="TABELA_OPCOES_ANS" Relationship="Self.FK__TABELA_AN__TABEL__21B6055D" FromRole="TABELA_ANS" ToRole="TABELA_OPCOES_ANS" />
+        </EntityType>
+        <EntityType Name="TABELA_OPCOES_ANS">
+          <Key>
+            <PropertyRef Name="ID_OPCOES" />
+          </Key>
+          <Property Name="ID_OPCOES" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OPERADORAS_ID_OPERADORA" Type="Int32" />
+          <Property Name="DESCRIÇÃO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="COD_INTERNO" Type="Int32" />
+          <Property Name="RESPOSTA_AUTOMATICA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OPERADORAS" Relationship="Self.FK__TABELA_OP__OPERA__1B0907CE" FromRole="TABELA_OPCOES_ANS" ToRole="OPERADORAS" />
+          <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_G__TABEL__2E1BDC42" FromRole="TABELA_OPCOES_ANS" ToRole="RECURSO_GLOSA" />
+          <NavigationProperty Name="TABELA_ANS" Relationship="Self.FK__TABELA_AN__TABEL__21B6055D" FromRole="TABELA_OPCOES_ANS" ToRole="TABELA_ANS" />
+        </EntityType>
+        <Association Name="FK__DEMONSTRA__FUNCI__276EDEB3">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="DEMONSTRATIVO" Type="Self.DEMONSTRATIVO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="DEMONSTRATIVO">
+              <PropertyRef Name="FUNCIONARIO_ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DEMONSTRATIVO__286302EC">
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="1" />
+          <End Role="DEMONSTRATIVO" Type="Self.DEMONSTRATIVO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="DEMONSTRATIVO">
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__FUNCI__2B3F6F97">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="FUNCIONARIO_ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GUIAS__LOTE_COD___182C9B23">
+          <End Role="LOTE" Type="Self.LOTE" Multiplicity="0..1" />
+          <End Role="GUIAS" Type="Self.GUIAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOTE">
+              <PropertyRef Name="COD_LOTE" />
+            </Principal>
+            <Dependent Role="GUIAS">
+              <PropertyRef Name="LOTE_COD_LOTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PROCEDIME__GUIAS__24927208">
+          <End Role="GUIAS" Type="Self.GUIAS" Multiplicity="0..1" />
+          <End Role="PROCEDIMENTO" Type="Self.PROCEDIMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GUIAS">
+              <PropertyRef Name="ID_GUIA" />
+            </Principal>
+            <Dependent Role="PROCEDIMENTO">
+              <PropertyRef Name="GUIAS_ID_GUIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRESTADOR__OPERA__1ED998B2">
+          <End Role="OPERADORAS" Type="Self.OPERADORAS" Multiplicity="1" />
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPERADORAS">
+              <PropertyRef Name="ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TABELA_OP__OPERA__1B0907CE">
+          <End Role="OPERADORAS" Type="Self.OPERADORAS" Multiplicity="0..1" />
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPERADORAS">
+              <PropertyRef Name="ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRESTADOR__PREST__1DE57479">
+          <End Role="PRESTADORES" Type="Self.PRESTADORES" Multiplicity="1" />
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES">
+              <PropertyRef Name="IDPRESTADOR" />
+            </Principal>
+            <Dependent Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_GLOSA__2C3393D0">
+          <End Role="PRESTADORES_has_OPERADORAS" Type="Self.PRESTADORES_has_OPERADORAS" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRESTADORES_has_OPERADORAS">
+              <PropertyRef Name="PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="OPERADORAS_ID_OPERADORA" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+              <PropertyRef Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__PROCE__2D27B809">
+          <End Role="PROCEDIMENTO" Type="Self.PROCEDIMENTO" Multiplicity="1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROCEDIMENTO">
+              <PropertyRef Name="idPROCEDIMENTO" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="PROCEDIMENTO_idPROCEDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__TABEL__2E1BDC42">
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="0..1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="ID_OPCOES" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="TABELA_OPCOES_ANS_ID_OPCOES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RECURSO_G__TABEL__2F10007B">
+          <End Role="TABELA_ANS" Type="Self.TABELA_ANS" Multiplicity="0..1" />
+          <End Role="RECURSO_GLOSA" Type="Self.RECURSO_GLOSA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_ANS">
+              <PropertyRef Name="COD_ANS" />
+            </Principal>
+            <Dependent Role="RECURSO_GLOSA">
+              <PropertyRef Name="TABELA_ANS_COD_ANS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TABELA_AN__TABEL__21B6055D">
+          <End Role="TABELA_OPCOES_ANS" Type="Self.TABELA_OPCOES_ANS" Multiplicity="0..1" />
+          <End Role="TABELA_ANS" Type="Self.TABELA_ANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TABELA_OPCOES_ANS">
+              <PropertyRef Name="ID_OPCOES" />
+            </Principal>
+            <Dependent Role="TABELA_ANS">
+              <PropertyRef Name="TABELA_OPCOES_ANS_ID_OPCOES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BancoRecursoGlosaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DEMONSTRATIVO" EntityType="Self.DEMONSTRATIVO" />
+          <EntitySet Name="FUNCIONARIO" EntityType="Self.FUNCIONARIO" />
+          <EntitySet Name="GUIAS" EntityType="Self.GUIAS" />
+          <EntitySet Name="LOTE" EntityType="Self.LOTE" />
+          <EntitySet Name="OPERADORAS" EntityType="Self.OPERADORAS" />
+          <EntitySet Name="PRESTADORES" EntityType="Self.PRESTADORES" />
+          <EntitySet Name="PRESTADORES_has_OPERADORAS" EntityType="Self.PRESTADORES_has_OPERADORAS" />
+          <EntitySet Name="PROCEDIMENTO" EntityType="Self.PROCEDIMENTO" />
+          <EntitySet Name="RECURSO_GLOSA" EntityType="Self.RECURSO_GLOSA" />
+          <EntitySet Name="TABELA_ANS" EntityType="Self.TABELA_ANS" />
+          <EntitySet Name="TABELA_OPCOES_ANS" EntityType="Self.TABELA_OPCOES_ANS" />
+          <AssociationSet Name="FK__DEMONSTRA__FUNCI__276EDEB3" Association="Self.FK__DEMONSTRA__FUNCI__276EDEB3">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="DEMONSTRATIVO" EntitySet="DEMONSTRATIVO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DEMONSTRATIVO__286302EC" Association="Self.FK__DEMONSTRATIVO__286302EC">
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+            <End Role="DEMONSTRATIVO" EntitySet="DEMONSTRATIVO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__FUNCI__2B3F6F97" Association="Self.FK__RECURSO_G__FUNCI__2B3F6F97">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GUIAS__LOTE_COD___182C9B23" Association="Self.FK__GUIAS__LOTE_COD___182C9B23">
+            <End Role="LOTE" EntitySet="LOTE" />
+            <End Role="GUIAS" EntitySet="GUIAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PROCEDIME__GUIAS__24927208" Association="Self.FK__PROCEDIME__GUIAS__24927208">
+            <End Role="GUIAS" EntitySet="GUIAS" />
+            <End Role="PROCEDIMENTO" EntitySet="PROCEDIMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRESTADOR__OPERA__1ED998B2" Association="Self.FK__PRESTADOR__OPERA__1ED998B2">
+            <End Role="OPERADORAS" EntitySet="OPERADORAS" />
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TABELA_OP__OPERA__1B0907CE" Association="Self.FK__TABELA_OP__OPERA__1B0907CE">
+            <End Role="OPERADORAS" EntitySet="OPERADORAS" />
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRESTADOR__PREST__1DE57479" Association="Self.FK__PRESTADOR__PREST__1DE57479">
+            <End Role="PRESTADORES" EntitySet="PRESTADORES" />
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_GLOSA__2C3393D0" Association="Self.FK__RECURSO_GLOSA__2C3393D0">
+            <End Role="PRESTADORES_has_OPERADORAS" EntitySet="PRESTADORES_has_OPERADORAS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__PROCE__2D27B809" Association="Self.FK__RECURSO_G__PROCE__2D27B809">
+            <End Role="PROCEDIMENTO" EntitySet="PROCEDIMENTO" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__TABEL__2E1BDC42" Association="Self.FK__RECURSO_G__TABEL__2E1BDC42">
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RECURSO_G__TABEL__2F10007B" Association="Self.FK__RECURSO_G__TABEL__2F10007B">
+            <End Role="TABELA_ANS" EntitySet="TABELA_ANS" />
+            <End Role="RECURSO_GLOSA" EntitySet="RECURSO_GLOSA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TABELA_AN__TABEL__21B6055D" Association="Self.FK__TABELA_AN__TABEL__21B6055D">
+            <End Role="TABELA_OPCOES_ANS" EntitySet="TABELA_OPCOES_ANS" />
+            <End Role="TABELA_ANS" EntitySet="TABELA_ANS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RECURSO_GLOSA_MDATAModelStoreContainer" CdmEntityContainer="BancoRecursoGlosaEntities">
+          <EntitySetMapping Name="DEMONSTRATIVO">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.DEMONSTRATIVO">
+              <MappingFragment StoreEntitySet="DEMONSTRATIVO">
+                <ScalarProperty Name="ID_DEMONS" ColumnName="ID_DEMONS" />
+                <ScalarProperty Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" ColumnName="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+                <ScalarProperty Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" ColumnName="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+                <ScalarProperty Name="FUNCIONARIO_ID_FUNCIONARIO" ColumnName="FUNCIONARIO_ID_FUNCIONARIO" />
+                <ScalarProperty Name="DT_BAIXADO" ColumnName="DT_BAIXADO" />
+                <ScalarProperty Name="TIP_DEMONS" ColumnName="TIP_DEMONS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FUNCIONARIO">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.FUNCIONARIO">
+              <MappingFragment StoreEntitySet="FUNCIONARIO">
+                <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+                <ScalarProperty Name="NOME_FUNCIONARIO" ColumnName="NOME_FUNCIONARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GUIAS">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.GUIAS">
+              <MappingFragment StoreEntitySet="GUIAS">
+                <ScalarProperty Name="ID_GUIA" ColumnName="ID_GUIA" />
+                <ScalarProperty Name="LOTE_COD_LOTE" ColumnName="LOTE_COD_LOTE" />
+                <ScalarProperty Name="COD_GUIA" ColumnName="COD_GUIA" />
+                <ScalarProperty Name="PROTOCOLO" ColumnName="PROTOCOLO" />
+                <ScalarProperty Name="NUM_GUIA" ColumnName="NUM_GUIA" />
+                <ScalarProperty Name="NUM_GUIA_PRESTADOR" ColumnName="NUM_GUIA_PRESTADOR" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOTE">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.LOTE">
+              <MappingFragment StoreEntitySet="LOTE">
+                <ScalarProperty Name="COD_LOTE" ColumnName="COD_LOTE" />
+                <ScalarProperty Name="ID_LOTE" ColumnName="ID_LOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPERADORAS">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.OPERADORAS">
+              <MappingFragment StoreEntitySet="OPERADORAS">
+                <ScalarProperty Name="ID_OPERADORA" ColumnName="ID_OPERADORA" />
+                <ScalarProperty Name="NOME_FANTASIA" ColumnName="NOME_FANTASIA" />
+                <ScalarProperty Name="REGISTRO_ANS" ColumnName="REGISTRO_ANS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRESTADORES">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.PRESTADORES">
+              <MappingFragment StoreEntitySet="PRESTADORES">
+                <ScalarProperty Name="IDPRESTADOR" ColumnName="IDPRESTADOR" />
+                <ScalarProperty Name="RAZAO_SOCIAL" ColumnName="RAZAO_SOCIAL" />
+                <ScalarProperty Name="CPF_CNPJ" ColumnName="CPF_CNPJ" />
+                <ScalarProperty Name="NOME_FANTASIA" ColumnName="NOME_FANTASIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRESTADORES_has_OPERADORAS">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.PRESTADORES_has_OPERADORAS">
+              <MappingFragment StoreEntitySet="PRESTADORES_has_OPERADORAS">
+                <ScalarProperty Name="PRESTADORES_IDPRESTADOR" ColumnName="PRESTADORES_IDPRESTADOR" />
+                <ScalarProperty Name="OPERADORAS_ID_OPERADORA" ColumnName="OPERADORAS_ID_OPERADORA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROCEDIMENTO">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.PROCEDIMENTO">
+              <MappingFragment StoreEntitySet="PROCEDIMENTO">
+                <ScalarProperty Name="idPROCEDIMENTO" ColumnName="idPROCEDIMENTO" />
+                <ScalarProperty Name="GUIAS_ID_GUIA" ColumnName="GUIAS_ID_GUIA" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="VLR_INFORMADO" ColumnName="VLR_INFORMADO" />
+                <ScalarProperty Name="VLR_LIBERADO" ColumnName="VLR_LIBERADO" />
+                <ScalarProperty Name="VLR_GLOSA" ColumnName="VLR_GLOSA" />
+                <ScalarProperty Name="DATA_REALIZACAO" ColumnName="DATA_REALIZACAO" />
+                <ScalarProperty Name="COD_GLOSA" ColumnName="COD_GLOSA" />
+                <ScalarProperty Name="TABELA" ColumnName="TABELA" />
+                <ScalarProperty Name="COD_GLOSA_GUIA" ColumnName="COD_GLOSA_GUIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECURSO_GLOSA">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.RECURSO_GLOSA">
+              <MappingFragment StoreEntitySet="RECURSO_GLOSA">
+                <ScalarProperty Name="idRECURSO_GLOSA" ColumnName="idRECURSO_GLOSA" />
+                <ScalarProperty Name="TABELA_ANS_COD_ANS" ColumnName="TABELA_ANS_COD_ANS" />
+                <ScalarProperty Name="TABELA_OPCOES_ANS_ID_OPCOES" ColumnName="TABELA_OPCOES_ANS_ID_OPCOES" />
+                <ScalarProperty Name="PROCEDIMENTO_idPROCEDIMENTO" ColumnName="PROCEDIMENTO_idPROCEDIMENTO" />
+                <ScalarProperty Name="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" ColumnName="PRESTADORES_has_OPERADORAS_OPERADORAS_ID_OPERADORA" />
+                <ScalarProperty Name="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" ColumnName="PRESTADORES_has_OPERADORAS_PRESTADORES_IDPRESTADOR" />
+                <ScalarProperty Name="FUNCIONARIO_ID_FUNCIONARIO" ColumnName="FUNCIONARIO_ID_FUNCIONARIO" />
+                <ScalarProperty Name="OBSERVACAO" ColumnName="OBSERVACAO" />
+                <ScalarProperty Name="STATUS_2" ColumnName="STATUS_2" />
+                <ScalarProperty Name="VLR_RECURSADO" ColumnName="VLR_RECURSADO" />
+                <ScalarProperty Name="DT_RECURSO" ColumnName="DT_RECURSO" />
+                <ScalarProperty Name="DPP" ColumnName="DPP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABELA_ANS">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.TABELA_ANS">
+              <MappingFragment StoreEntitySet="TABELA_ANS">
+                <ScalarProperty Name="COD_ANS" ColumnName="COD_ANS" />
+                <ScalarProperty Name="TABELA_OPCOES_ANS_ID_OPCOES" ColumnName="TABELA_OPCOES_ANS_ID_OPCOES" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="RESPOSTA_AUTOMATICA" ColumnName="RESPOSTA_AUTOMATICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABELA_OPCOES_ANS">
+            <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.TABELA_OPCOES_ANS">
+              <MappingFragment StoreEntitySet="TABELA_OPCOES_ANS">
+                <ScalarProperty Name="ID_OPCOES" ColumnName="ID_OPCOES" />
+                <ScalarProperty Name="OPERADORAS_ID_OPERADORA" ColumnName="OPERADORAS_ID_OPERADORA" />
+                <ScalarProperty Name="DESCRIÇÃO" ColumnName="DESCRIÇÃO" />
+                <ScalarProperty Name="COD_INTERNO" ColumnName="COD_INTERNO" />
+                <ScalarProperty Name="RESPOSTA_AUTOMATICA" ColumnName="RESPOSTA_AUTOMATICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
