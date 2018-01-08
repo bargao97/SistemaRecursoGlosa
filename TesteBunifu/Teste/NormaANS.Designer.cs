@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCadastrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.gdvTabelaAns = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtCodAns = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -62,24 +62,25 @@
             // 
             // gdvTabelaAns
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gdvTabelaAns.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gdvTabelaAns.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvTabelaAns.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gdvTabelaAns.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvTabelaAns.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvTabelaAns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvTabelaAns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvTabelaAns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdvTabelaAns.DoubleBuffered = true;
             this.gdvTabelaAns.EnableHeadersVisualStyles = false;
-            this.gdvTabelaAns.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.gdvTabelaAns.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.gdvTabelaAns.GridColor = System.Drawing.SystemColors.Control;
+            this.gdvTabelaAns.HeaderBgColor = System.Drawing.Color.DarkCyan;
+            this.gdvTabelaAns.HeaderForeColor = System.Drawing.Color.DarkCyan;
             this.gdvTabelaAns.Location = new System.Drawing.Point(62, 211);
             this.gdvTabelaAns.Name = "gdvTabelaAns";
             this.gdvTabelaAns.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

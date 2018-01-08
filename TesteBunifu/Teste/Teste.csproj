@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\..\Documents\Recurso de glosa\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -241,6 +241,7 @@
       <DependentUpon>BancoRecursoGlosa.edmx</DependentUpon>
       <LastGenOutput>BancoRecursoGlosa.cs</LastGenOutput>
     </Content>
+    <Content Include="Database\scriptAtualizado.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

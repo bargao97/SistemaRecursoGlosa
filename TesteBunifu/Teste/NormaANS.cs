@@ -27,22 +27,22 @@ namespace Teste
                 string descricao = txtDescricao.Text.ToUpper();
                 string resposta = txtResposta.Text.ToUpper();
 
-                var codExistente = db.TABELA_ANS.Where(s => s.COD_ANS == codAns).FirstOrDefault();
+                var codExistente = db.TABELA_ANS.Where(s => s.COD_ANS_NORMA == codAns).FirstOrDefault();
                 if (codExistente != null)
                 {
                     MessageBox.Show("CODIGO ANS JA INSERIDO NO SISTEMA");
                 }
                 else
                 {
-                    ans.COD_ANS = codAns;
+                    ans.COD_ANS_NORMA = codAns;
                     ans.DESCRICAO = descricao;
                     ans.RESPOSTA_AUTOMATICA = resposta;
                     db.TABELA_ANS.Add(ans);
                     db.SaveChanges();
-
+                    MessageBox.Show("Codigo ADICIONADO COM SUCESSO");
+                    gdvTabelaAns.DataSource = db.TABELA_ANS.ToList();
                 }
-                MessageBox.Show("Codigo ADICIONADO COM SUCESSO");
-                gdvTabelaAns.DataSource = db.TABELA_ANS.ToList();
+
             }
             catch(Exception er)
             {
@@ -50,7 +50,15 @@ namespace Teste
             }
             
         }
-
+        public void carregarGrid()
+        {
+            gdvTabelaAns.DataSource = db.TABELA_ANS.Select(s => new
+            {
+                CODIGO = s.COD_ANS_NORMA,
+                NORMA = s.DESCRICAO,
+                RESPOSTA = s.RESPOSTA_AUTOMATICA
+            }).ToList();
+        }
         private void NormaANS_Load(object sender, EventArgs e)
         {
          

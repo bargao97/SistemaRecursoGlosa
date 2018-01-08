@@ -36,6 +36,8 @@ namespace Teste
 
         private void btnCadastrarANS_Click(object sender, EventArgs e)
         {
+            NormaANS ns = new NormaANS();
+            ns.carregarGrid();
             normaANS1.BringToFront();
         }
 

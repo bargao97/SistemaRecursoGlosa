@@ -109,6 +109,7 @@
           <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="int" />
           <Property Name="DESCRICAO" Type="varchar" MaxLength="255" />
           <Property Name="RESPOSTA_AUTOMATICA" Type="varchar" MaxLength="255" />
+          <Property Name="COD_ANS_NORMA" Type="int" />
         </EntityType>
         <EntityType Name="TABELA_OPCOES_ANS">
           <Key>
@@ -472,10 +473,11 @@
           </Key>
           <Property Name="COD_ANS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TABELA_OPCOES_ANS_ID_OPCOES" Type="Int32" />
-          <Property Name="DESCRICAO" Type="String" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="RESPOSTA_AUTOMATICA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RECURSO_GLOSA" Relationship="Self.FK__RECURSO_G__TABEL__2F10007B" FromRole="TABELA_ANS" ToRole="RECURSO_GLOSA" />
           <NavigationProperty Name="TABELA_OPCOES_ANS" Relationship="Self.FK__TABELA_AN__TABEL__21B6055D" FromRole="TABELA_ANS" ToRole="TABELA_OPCOES_ANS" />
+          <Property Name="COD_ANS_NORMA" Type="Int32" />
         </EntityType>
         <EntityType Name="TABELA_OPCOES_ANS">
           <Key>
@@ -828,6 +830,7 @@
           <EntitySetMapping Name="TABELA_ANS">
             <EntityTypeMapping TypeName="RECURSO_GLOSA_MDATAModel.TABELA_ANS">
               <MappingFragment StoreEntitySet="TABELA_ANS">
+                <ScalarProperty Name="COD_ANS_NORMA" ColumnName="COD_ANS_NORMA" />
                 <ScalarProperty Name="COD_ANS" ColumnName="COD_ANS" />
                 <ScalarProperty Name="TABELA_OPCOES_ANS_ID_OPCOES" ColumnName="TABELA_OPCOES_ANS_ID_OPCOES" />
                 <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
