@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastrarClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CadastrarClientes.Designer.cs">
+      <DependentUpon>CadastrarClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarOperadora.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastrarClientes.resx">
+      <DependentUpon>CadastrarClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastrarOperadora.resx">
       <DependentUpon>CadastrarOperadora.cs</DependentUpon>
     </EmbeddedResource>

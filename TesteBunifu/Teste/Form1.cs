@@ -55,5 +55,10 @@ namespace Teste
         {
             menuPrincipal1.BringToFront();
         }
+
+        private void btnCadastrarClientes_Click(object sender, EventArgs e)
+        {
+            cadastrarClientes1.BringToFront();
+        }
     }
 }  

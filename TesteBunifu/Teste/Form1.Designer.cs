@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnInicio = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCadastrarOperadoras = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCadastrrarClientes = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCadastrarClientes = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCadastrarANS = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnBuscarLote = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,6 +47,7 @@
             this.normaANS1 = new Teste.NormaANS();
             this.menuPrincipal1 = new Teste.MenuPrincipal();
             this.cadastrarOperadora1 = new Teste.CadastrarOperadora();
+            this.cadastrarClientes1 = new Teste.CadastrarClientes();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -64,7 +65,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Controls.Add(this.btnInicio);
             this.flowLayoutPanel1.Controls.Add(this.btnCadastrarOperadoras);
-            this.flowLayoutPanel1.Controls.Add(this.btnCadastrrarClientes);
+            this.flowLayoutPanel1.Controls.Add(this.btnCadastrarClientes);
             this.flowLayoutPanel1.Controls.Add(this.btnCadastrarANS);
             this.flowLayoutPanel1.Controls.Add(this.btnBuscarLote);
             this.flowLayoutPanel1.Controls.Add(this.bunifuFlatButton4);
@@ -157,40 +158,41 @@
             this.btnCadastrarOperadoras.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarOperadoras.Click += new System.EventHandler(this.btnCadastrarOperadoras_Click);
             // 
-            // btnCadastrrarClientes
+            // btnCadastrarClientes
             // 
-            this.btnCadastrrarClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnCadastrrarClientes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrrarClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadastrrarClientes.BorderRadius = 0;
-            this.btnCadastrrarClientes.ButtonText = "       Clientes";
-            this.btnCadastrrarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrrarClientes.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCadastrrarClientes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrrarClientes.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCadastrrarClientes.Iconimage = global::Teste.Properties.Resources.medico;
-            this.btnCadastrrarClientes.Iconimage_right = null;
-            this.btnCadastrrarClientes.Iconimage_right_Selected = null;
-            this.btnCadastrrarClientes.Iconimage_Selected = null;
-            this.btnCadastrrarClientes.IconMarginLeft = 0;
-            this.btnCadastrrarClientes.IconMarginRight = 0;
-            this.btnCadastrrarClientes.IconRightVisible = false;
-            this.btnCadastrrarClientes.IconRightZoom = 0D;
-            this.btnCadastrrarClientes.IconVisible = true;
-            this.btnCadastrrarClientes.IconZoom = 70D;
-            this.btnCadastrrarClientes.IsTab = true;
-            this.btnCadastrrarClientes.Location = new System.Drawing.Point(3, 194);
-            this.btnCadastrrarClientes.Name = "btnCadastrrarClientes";
-            this.btnCadastrrarClientes.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrrarClientes.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrrarClientes.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnCadastrrarClientes.selected = false;
-            this.btnCadastrrarClientes.Size = new System.Drawing.Size(266, 47);
-            this.btnCadastrrarClientes.TabIndex = 3;
-            this.btnCadastrrarClientes.Text = "       Clientes";
-            this.btnCadastrrarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrrarClientes.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCadastrrarClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnCadastrarClientes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCadastrarClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCadastrarClientes.BorderRadius = 0;
+            this.btnCadastrarClientes.ButtonText = "       Clientes";
+            this.btnCadastrarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrarClientes.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCadastrarClientes.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarClientes.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCadastrarClientes.Iconimage = global::Teste.Properties.Resources.medico;
+            this.btnCadastrarClientes.Iconimage_right = null;
+            this.btnCadastrarClientes.Iconimage_right_Selected = null;
+            this.btnCadastrarClientes.Iconimage_Selected = null;
+            this.btnCadastrarClientes.IconMarginLeft = 0;
+            this.btnCadastrarClientes.IconMarginRight = 0;
+            this.btnCadastrarClientes.IconRightVisible = false;
+            this.btnCadastrarClientes.IconRightZoom = 0D;
+            this.btnCadastrarClientes.IconVisible = true;
+            this.btnCadastrarClientes.IconZoom = 70D;
+            this.btnCadastrarClientes.IsTab = true;
+            this.btnCadastrarClientes.Location = new System.Drawing.Point(3, 194);
+            this.btnCadastrarClientes.Name = "btnCadastrarClientes";
+            this.btnCadastrarClientes.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.btnCadastrarClientes.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnCadastrarClientes.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnCadastrarClientes.selected = false;
+            this.btnCadastrarClientes.Size = new System.Drawing.Size(266, 47);
+            this.btnCadastrarClientes.TabIndex = 3;
+            this.btnCadastrarClientes.Text = "       Clientes";
+            this.btnCadastrarClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarClientes.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCadastrarClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarClientes.Click += new System.EventHandler(this.btnCadastrarClientes_Click);
             // 
             // btnCadastrarANS
             // 
@@ -381,7 +383,7 @@
             // 
             this.normaANS1.Location = new System.Drawing.Point(272, 25);
             this.normaANS1.Name = "normaANS1";
-            this.normaANS1.Size = new System.Drawing.Size(590, 449);
+            this.normaANS1.Size = new System.Drawing.Size(590, 458);
             this.normaANS1.TabIndex = 4;
             // 
             // menuPrincipal1
@@ -398,12 +400,20 @@
             this.cadastrarOperadora1.Size = new System.Drawing.Size(602, 449);
             this.cadastrarOperadora1.TabIndex = 2;
             // 
+            // cadastrarClientes1
+            // 
+            this.cadastrarClientes1.Location = new System.Drawing.Point(272, 25);
+            this.cadastrarClientes1.Name = "cadastrarClientes1";
+            this.cadastrarClientes1.Size = new System.Drawing.Size(599, 421);
+            this.cadastrarClientes1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 483);
+            this.Controls.Add(this.cadastrarClientes1);
             this.Controls.Add(this.normaANS1);
             this.Controls.Add(this.menuPrincipal1);
             this.Controls.Add(this.cadastrarOperadora1);
@@ -431,7 +441,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCadastrarOperadoras;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCadastrrarClientes;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCadastrarClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnCadastrarANS;
         private Bunifu.Framework.UI.BunifuFlatButton btnBuscarLote;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
@@ -441,5 +451,6 @@
         private MenuPrincipal menuPrincipal1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private NormaANS normaANS1;
+        private CadastrarClientes cadastrarClientes1;
     }
 }
