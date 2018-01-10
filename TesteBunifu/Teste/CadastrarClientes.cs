@@ -56,10 +56,17 @@ namespace Teste
             else if(txtCNPJ.Text.Length <11)
             {
                 MessageBox.Show("CPF nao possui a quantidade de caracteres obrigatorias");
+                txtCNPJ.Text = "";
             }
-            else if (txtCNPJ.Text.Length > 11 && txtCNPJ.Text.Length < 14 && txtCNPJ.Text.Length > 14)
+            else if (txtCNPJ.Text.Length > 11 && txtCNPJ.Text.Length < 14)
             {
                 MessageBox.Show("CNPJ nao possui a quantidade de caracteres obrigatorias");
+                txtCNPJ.Text = "";
+            }
+            else if(txtCNPJ.Text.Length > 14)
+            {
+                MessageBox.Show(" CPF ou cnpj possui a quantidade de caractereres é maior que o oobrigatorio");
+                txtCNPJ.Text = "";
             }
         }
     }
