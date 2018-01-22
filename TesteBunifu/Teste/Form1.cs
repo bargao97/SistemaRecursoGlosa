@@ -14,6 +14,11 @@ namespace Teste
     public partial class Form1 : Form
     {
         BancoRecursoGlosaEntities db = new BancoRecursoGlosaEntities();
+
+        //ID do operador para a tela verOpeadora tela cadastrar cliente
+        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -26,19 +31,19 @@ namespace Teste
 
         private void btnCadastrarOperadoras_Click(object sender, EventArgs e)
         {
-            cadastrarOperadora1.BringToFront();
+            cadastrarOperadora2.BringToFront();
         } 
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            menuPrincipal1.BringToFront();
+            menuPrincipal2.BringToFront();
         }
 
         private void btnCadastrarANS_Click(object sender, EventArgs e)
         {
             NormaANS ns = new NormaANS();
             ns.carregarGrid();
-            normaANS1.BringToFront();
+            normaANS2.BringToFront();
         }
 
         private void NAns_Load(object sender, EventArgs e)
@@ -53,12 +58,18 @@ namespace Teste
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            menuPrincipal1.BringToFront();
+            menuPrincipal2.BringToFront();
         }
 
         private void btnCadastrarClientes_Click(object sender, EventArgs e)
         {
-            cadastrarClientes1.BringToFront();
+            cadastrarClientes2.BringToFront();
+            cadastrarClientes2.carregarGrid();
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            cadastrarFuncionario2.BringToFront();
         }
     }
 }  

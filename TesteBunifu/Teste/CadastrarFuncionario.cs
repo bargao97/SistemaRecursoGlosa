@@ -8,46 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Teste.Database;
+
 namespace Teste
 {
-    public partial class CadastrarOperadora : UserControl
+    public partial class CadastrarFuncionario : UserControl
     {
         BancoRecursoGlosaEntities db = new BancoRecursoGlosaEntities();
-        public CadastrarOperadora()
+        public CadastrarFuncionario()
         {
             InitializeComponent();
         }
-
-        private void CadastrarOperadora_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCNPJ_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            OPERADORAS op = new OPERADORAS();
-            string Operadora = txtNomeFantasia.Text.ToUpper();
-            int registro_ANS = Convert.ToInt32(txtRegistroAns.Text.ToUpper());
-            var opExistentes = db.OPERADORAS.Where(s => s.NOME_FANTASIA == Operadora ||s.REGISTRO_ANS == registro_ANS).ToList();
-            if(opExistentes.Count() != 0)
+            FUNCIONARIO func = new FUNCIONARIO();
+            string nomeFuncionario = txtNomeFuncionario.Text.ToUpper();
+            string usuario = txtUsuario.Text;
+            string senha = txtSenha.Text;
+            var funcExistente = db.FUNCIONARIO.Where(s => s.USUARIO == usuario).ToList();
+            if(funcExistente.Count() != 0)
             {
-                MessageBox.Show("OPERADORA JA CADASTRADA NO SISTEMA");
+                MessageBox.Show("FUNCIONARIO JÁ CADASTRADO NO SISTEMA");
             }
             else
             {
                 try
                 {
-                    op.NOME_FANTASIA = Operadora;
-                    op.REGISTRO_ANS = registro_ANS;
-                    db.OPERADORAS.Add(op);
+                    func.NOME_FUNCIONARIO = nomeFuncionario;
+                    func.USUARIO = usuario;
+                    func.SENHA = senha;
+                    db.FUNCIONARIO.Add(func);
                     db.SaveChanges();
-                    MessageBox.Show("OPERADORA JA CADASTRADA COM SUCESSO");
-                    gdvOperadoras.DataSource = db.OPERADORAS.ToList();
+                    MessageBox.Show("FUNCIONARIO CADASTRADO COM SUCESSO");
+                    gdvFuncionarios.DataSource = db.FUNCIONARIO.Select(s => new
+                    {
+                        FUNCIONARIO = s.NOME_FUNCIONARIO,
+                        USUARIO = s.USUARIO,
+                        SENHA = s.SENHA
+                    }).ToList();
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException er)
                 {
@@ -65,12 +62,8 @@ namespace Teste
                     }
                     throw new Exception(rs);
                 }
+                db.Dispose();
             }
-        }
-
-        private void gdvOperadoras_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

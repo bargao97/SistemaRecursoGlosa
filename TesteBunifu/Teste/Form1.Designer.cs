@@ -44,10 +44,11 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.normaANS1 = new Teste.NormaANS();
-            this.menuPrincipal1 = new Teste.MenuPrincipal();
-            this.cadastrarOperadora1 = new Teste.CadastrarOperadora();
-            this.cadastrarClientes1 = new Teste.CadastrarClientes();
+            this.cadastrarClientes2 = new Teste.CadastrarClientes();
+            this.cadastrarFuncionario2 = new Teste.CadastrarFuncionario();
+            this.cadastrarOperadora2 = new Teste.CadastrarOperadora();
+            this.menuPrincipal2 = new Teste.MenuPrincipal();
+            this.normaANS2 = new Teste.NormaANS();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -299,6 +300,7 @@
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // bunifuFlatButton5
             // 
@@ -379,33 +381,40 @@
             this.bunifuDragControl1.TargetControl = this.panelHeader;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // normaANS1
+            // cadastrarClientes2
             // 
-            this.normaANS1.Location = new System.Drawing.Point(272, 25);
-            this.normaANS1.Name = "normaANS1";
-            this.normaANS1.Size = new System.Drawing.Size(590, 458);
-            this.normaANS1.TabIndex = 4;
+            this.cadastrarClientes2.Location = new System.Drawing.Point(270, 25);
+            this.cadastrarClientes2.Name = "cadastrarClientes2";
+            this.cadastrarClientes2.Size = new System.Drawing.Size(601, 449);
+            this.cadastrarClientes2.TabIndex = 2;
             // 
-            // menuPrincipal1
+            // cadastrarFuncionario2
             // 
-            this.menuPrincipal1.Location = new System.Drawing.Point(272, 25);
-            this.menuPrincipal1.Name = "menuPrincipal1";
-            this.menuPrincipal1.Size = new System.Drawing.Size(590, 455);
-            this.menuPrincipal1.TabIndex = 3;
+            this.cadastrarFuncionario2.Location = new System.Drawing.Point(270, 25);
+            this.cadastrarFuncionario2.Name = "cadastrarFuncionario2";
+            this.cadastrarFuncionario2.Size = new System.Drawing.Size(601, 449);
+            this.cadastrarFuncionario2.TabIndex = 3;
             // 
-            // cadastrarOperadora1
+            // cadastrarOperadora2
             // 
-            this.cadastrarOperadora1.Location = new System.Drawing.Point(272, 25);
-            this.cadastrarOperadora1.Name = "cadastrarOperadora1";
-            this.cadastrarOperadora1.Size = new System.Drawing.Size(602, 449);
-            this.cadastrarOperadora1.TabIndex = 2;
+            this.cadastrarOperadora2.Location = new System.Drawing.Point(270, 25);
+            this.cadastrarOperadora2.Name = "cadastrarOperadora2";
+            this.cadastrarOperadora2.Size = new System.Drawing.Size(601, 449);
+            this.cadastrarOperadora2.TabIndex = 4;
             // 
-            // cadastrarClientes1
+            // menuPrincipal2
             // 
-            this.cadastrarClientes1.Location = new System.Drawing.Point(272, 25);
-            this.cadastrarClientes1.Name = "cadastrarClientes1";
-            this.cadastrarClientes1.Size = new System.Drawing.Size(599, 421);
-            this.cadastrarClientes1.TabIndex = 5;
+            this.menuPrincipal2.Location = new System.Drawing.Point(270, 25);
+            this.menuPrincipal2.Name = "menuPrincipal2";
+            this.menuPrincipal2.Size = new System.Drawing.Size(601, 449);
+            this.menuPrincipal2.TabIndex = 5;
+            // 
+            // normaANS2
+            // 
+            this.normaANS2.Location = new System.Drawing.Point(270, 25);
+            this.normaANS2.Name = "normaANS2";
+            this.normaANS2.Size = new System.Drawing.Size(604, 453);
+            this.normaANS2.TabIndex = 6;
             // 
             // Form1
             // 
@@ -413,10 +422,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 483);
-            this.Controls.Add(this.cadastrarClientes1);
-            this.Controls.Add(this.normaANS1);
-            this.Controls.Add(this.menuPrincipal1);
-            this.Controls.Add(this.cadastrarOperadora1);
+            this.Controls.Add(this.normaANS2);
+            this.Controls.Add(this.menuPrincipal2);
+            this.Controls.Add(this.cadastrarOperadora2);
+            this.Controls.Add(this.cadastrarFuncionario2);
+            this.Controls.Add(this.cadastrarClientes2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -447,10 +457,11 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton btnInicio;
-        private CadastrarOperadora cadastrarOperadora1;
-        private MenuPrincipal menuPrincipal1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private NormaANS normaANS1;
-        private CadastrarClientes cadastrarClientes1;
+        private NormaANS normaANS2;
+        private MenuPrincipal menuPrincipal2;
+        private CadastrarOperadora cadastrarOperadora2;
+        private CadastrarFuncionario cadastrarFuncionario2;
+        private CadastrarClientes cadastrarClientes2;
     }
 }
