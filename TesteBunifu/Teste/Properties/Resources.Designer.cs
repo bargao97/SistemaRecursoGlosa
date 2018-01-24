@@ -133,6 +133,16 @@ namespace Teste.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap correct_icon_59x59 {
+            get {
+                object obj = ResourceManager.GetObject("correct icon 59x59", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap error_icon {
             get {
                 object obj = ResourceManager.GetObject("error icon", resourceCulture);
@@ -206,6 +216,26 @@ namespace Teste.Properties {
         internal static System.Drawing.Bitmap medico {
             get {
                 object obj = ResourceManager.GetObject("medico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil_icon_59x59 {
+            get {
+                object obj = ResourceManager.GetObject("pencil icon 59x59", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil_icon_59x59_branco {
+            get {
+                object obj = ResourceManager.GetObject("pencil icon 59x59 branco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

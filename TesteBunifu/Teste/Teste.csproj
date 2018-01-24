@@ -60,22 +60,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserControls\CadastrarClientes.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CadastrarClientes.Designer.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarClientes.Designer.cs">
       <DependentUpon>CadastrarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CadastrarFuncionario.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CadastrarFuncionario.Designer.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarFuncionario.Designer.cs">
       <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CadastrarOperadora.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarOperadora.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CadastrarOperadora.Designer.cs">
+    <Compile Include="UserControls\FormInicio\CadastrarOperadora.Designer.cs">
       <DependentUpon>CadastrarOperadora.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\BancoRecursoGlosa.Context.cs">
@@ -132,16 +132,16 @@
     <Compile Include="Forms\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MenuPrincipal.cs">
+    <Compile Include="UserControls\FormInicio\MenuPrincipal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MenuPrincipal.Designer.cs">
+    <Compile Include="UserControls\FormInicio\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\NormaANS.cs">
+    <Compile Include="UserControls\FormInicio\NormaANS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\NormaANS.Designer.cs">
+    <Compile Include="UserControls\FormInicio\NormaANS.Designer.cs">
       <DependentUpon>NormaANS.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -152,22 +152,22 @@
     <Compile Include="Forms\verPrestador.Designer.cs">
       <DependentUpon>verPrestador.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\CadastrarClientes.resx">
+    <EmbeddedResource Include="UserControls\FormInicio\CadastrarClientes.resx">
       <DependentUpon>CadastrarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CadastrarFuncionario.resx">
+    <EmbeddedResource Include="UserControls\FormInicio\CadastrarFuncionario.resx">
       <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CadastrarOperadora.resx">
+    <EmbeddedResource Include="UserControls\FormInicio\CadastrarOperadora.resx">
       <DependentUpon>CadastrarOperadora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MenuPrincipal.resx">
+    <EmbeddedResource Include="UserControls\FormInicio\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\NormaANS.resx">
+    <EmbeddedResource Include="UserControls\FormInicio\NormaANS.resx">
       <DependentUpon>NormaANS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -269,6 +269,12 @@
       <LastGenOutput>BancoRecursoGlosa.cs</LastGenOutput>
     </Content>
     <Content Include="Database\scriptAtualizado.sql" />
+    <None Include="Resources\correct icon 59x59.png" />
+    <None Include="Resources\pencil icon 59x59 branco.png" />
+    <None Include="Resources\pencil icon 59x59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\FormVerPrestador\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

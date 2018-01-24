@@ -90,12 +90,23 @@ namespace Teste
                 CPF_CNPJ = s.CPF_CNPJ
             }).ToList();
         }
+        verPrestador vp;
         private void gdvPrestadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var IdPrestador = gdvPrestadores.Rows[e.RowIndex].Cells[0].Value;
             idprestadorCadastrarClientes = Convert.ToInt32(IdPrestador);
-            verPrestador vp = new verPrestador();
-            vp.Show();
+
+            if(vp == null)
+            {
+                verPrestador vp = new verPrestador();
+                vp.ShowDialog();
+            }
+            else
+            {
+
+                MessageBox.Show("Formulario ja está aberto, favor fecha-lo");
+            }
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -103,7 +114,6 @@ namespace Teste
             try
             {
                 PRESTADORES prestador = new PRESTADORES();
-
                 prestador.CPF_CNPJ = CPF_CNPJ_SemMascara.ToString();
                 prestador.RAZAO_SOCIAL = txtRazaoSocial.Text;
                 prestador.NOME_FANTASIA = txtNomeFantasia.Text;
